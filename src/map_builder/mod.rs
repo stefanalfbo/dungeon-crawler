@@ -1,9 +1,11 @@
 use crate::prelude::*;
 mod empty;
 use empty::EmptyArchitect;
+mod rooms;
+use rooms::RoomsArchitect;
 
 trait MapArchitect {
-    fn new(&mut self, rng: &mut RandomNumberGenerator) -> MapBuilder; // (2)
+    fn new(&mut self, rng: &mut RandomNumberGenerator) -> MapBuilder;
 }
 
 const NUM_ROOMS: usize = 20;
@@ -17,7 +19,7 @@ pub struct MapBuilder {
 
 impl MapBuilder {
     pub fn new(rng: &mut RandomNumberGenerator) -> Self {
-        let mut architect = EmptyArchitect {};
+        let mut architect = RoomsArchitect {};
         architect.new(rng)
     }
 
