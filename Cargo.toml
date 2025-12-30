@@ -6,3 +6,5 @@ edition = "2024"
 [dependencies]
 bracket-lib = "~0.8.7"
 legion = "=0.3.1"
+serde = "1.0.228"
+ron = "0.12.0"
